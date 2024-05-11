@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site Rosado</title>
+    <style>
+        body {
+            background-color: #F7CAC9; /* Cor de fundo rosa */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Define a altura da página como 100% da altura da viewport */
+        }
+
+        #conteudo {
+            text-align: center;
+            color: #FF6F61; /* Cor do texto rosa */
+        }
+
+        button {
+            font-size: 24px;
+            color: white;
+            background-color: #E74C3C; /* Cor de fundo rosa mais escura */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Transição suave da cor de fundo */
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #C0392B; /* Cor de fundo rosa ainda mais escura quando hover */
+        }
+
+        #imagemModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9); /* Cor de fundo branco rosado */
+            z-index: 999;
+            animation: balanco 0.5s ease-in-out infinite alternate; /* Animação de balanço */
+        }
+
+        @keyframes balanco {
+            0% {
+                transform: rotate(-10deg);
+            }
+            100% {
+                transform: rotate(10deg);
+            }
+        }
+
+        @keyframes batida {
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="conteudo">
+        <h1>Isabelly <span style="color:#ff1900;">卐</span> </h1>
+    
+        <button id="botao">Ver Ditadora</button>
+    </div>
+
+    <audio id="musica" src="MONTAGEM DIAMANTE ROSA (SLOWED) (320).mp3"></audio>
+
+    <div id="imagemModal">
+        <img id="imagem" src="images\Picsart_24-01-24_02-10-29-188 (1).jpg" alt="Imagem" style="width: 100%; height: 100%; object-fit: cover; animation: batida 0.5s ease-in-out infinite alternate;">
+    </div>
+
+    <script>
+        document.getElementById('botao').addEventListener('click', function() {
+            // Toca a música
+            document.getElementById('musica').play();
+
+            // Exibe a imagem modal
+            var imagemModal = document.getElementById('imagemModal');
+            imagemModal.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
